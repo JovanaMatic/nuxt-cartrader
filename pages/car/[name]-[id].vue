@@ -1,3 +1,10 @@
+<script setup>
+  const route = useRoute()
+  useHead({
+    title: userCarNameFormat(route.params.name)
+  })
+</script>
+
 <template>
   <div>
     <NavBar />
@@ -9,10 +16,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-
-</script>
 
 <style scoped>
 
