@@ -15,7 +15,7 @@
 </script>
 
 <template>
-  <div>
+  <div v-if="cars">
     <DetailHero :car="filteredCar" />
     <DetailAttributes :car="filteredCar"/>
     <DetailDescription :car="filteredCar"/>
