@@ -12,6 +12,13 @@
   const filteredCar = computed(() => {
     return cars.find(car => car.id === Number(carId))
   })
+
+  if(!filteredCar.value) {
+    throw createError({
+      statusCode: 404,
+      message: `Car with ID ${route.params.id} does not exist`
+    })
+  }
 </script>
 
 <template>
