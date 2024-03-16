@@ -3,7 +3,6 @@
   useHead({
     title: `${route.params.make ? userCarNameFormat(route.params.make) : 'Cars'} in ${userCarNameFormat(route.params.city)}`
   })
-
   definePageMeta({
     layout: 'custom'
   })

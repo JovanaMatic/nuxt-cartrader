@@ -1,7 +1,16 @@
+<script setup>
+  const props = defineProps({
+    car: {
+      type: Object,
+      required: true
+    }
+  })
+</script>
+
 <template>
   <div>
     <div class="mt-5">
-      <p class="mb-10">Lorem ipsum dolor sit amet.
+      <p class="mb-10">{{ car.description }}
       </p>
     </div>
   </div>
