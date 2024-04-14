@@ -18,9 +18,7 @@
 <template>
   <div>
     <div class="w-full">
-      <ClientOnly>
-        <CarCard v-for="car in cars" :key="car.id" :car="car" :favored="car.id in favorite" @favor="handleFavored" />
-      </ClientOnly>
+      <CarCard v-for="car in cars" :key="car.id" :car="car" :favored="car.id in favorite" @favor="handleFavored" />
     </div>
   </div>
 </template>
