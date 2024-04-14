@@ -5,17 +5,20 @@ import heartOutline from '~/assets/heartOutline.png'
     car: {
       type: Object,
       required: true
+    },
+    favored: {
+      type: Boolean
     }
   })
 
-  const favored = useState(`favored-${props.car.id}`, () => false)
+  const emit = defineEmits(['favor'])
 </script>
 
 <template>
   <div>
     <div class="relative shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
     >
-    <img class="absolute w-7 top-2 z-20 right-5" :src="favored ? heartFilled : heartOutline" alt="heart" @click="favored = !favored"/>
+    <img class="absolute w-7 top-2 z-20 right-5" :src="favored ? heartFilled : heartOutline" alt="heart" @click="emit('favor', car.id)"/>
       <div class="flex h-full" @click="navigateTo(`/car/${car.name}-${car.id}`)">
         <NuxtImg :src="car.url" class="w-[300px] h-full" alt="car image" />
           <div class="p-4 flex flex-col">
