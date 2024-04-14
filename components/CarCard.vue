@@ -5,10 +5,14 @@ import heartOutline from '~/assets/heartOutline.png'
     car: {
       type: Object,
       required: true
+    },
+    favored: {
+      type: Boolean,
+      required: true
     }
   })
 
-  const favored = useState(`favored-${props.car.id}`, () => false)
+  const emit = defineEmits(['favor'])
 
 </script>
 
